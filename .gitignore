@@ -9,4 +9,4 @@ venv.bak/
 antenv/
 
 *.xlsx
-*.pt
+# *.pt
