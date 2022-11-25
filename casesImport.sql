@@ -203,11 +203,12 @@ with CTE as
          AND is_generic_data = 'no'
          AND resolved_by not in ('sys_user/e749fee7dbf73c10dcf93313e2961911') ), --AND resolution_code != 'Noise - Informational' ),
 users as
-    (select sys_id,
+    (select sys_id as user_sys_id,
             "user_name" as resolved_by_user_name
      from warehouse_snow.curr_snow_sys_user)
 select *
 FROM cte
-join users on cte.resolved_by= users.sys_id -- where resolved_by_user_name not in ('admin',
---                                     'svcEBondedOHA')
+join users on cte.resolved_by= users.user_sys_id --
+
+where resolved_at_eastern <='11/25/22' --                                     'svcEBondedOHA')
 -- limit 10000
