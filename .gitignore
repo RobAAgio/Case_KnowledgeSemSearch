@@ -9,4 +9,6 @@ venv.bak/
 antenv/
 
 *.xlsx
-# *.pt
+*.pt
+corpusEmbed.pt
+*.pkl
